@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+    
+    <div class="row mt-0 mb-3">
+        <div class="col-12 giris p-5" style="text-align: center; " id="col-12-bg">
+            <a href="#gel" class="btn btn-dark-outline f-24 m-2" onclick="">Satış</a>
+            <a href="#rafBilgisi" class="btn btn-dark-outline f-24 m-2" onclick="">Raf detay</a>
+            <a href="#urunAlis" class="btn btn-dark-outline f-24 m-2" onclick="">Ürün alış</a>
+        </div>
+        
+    </div>
+
+    <!-- <input class="p-2 mb-1 f-18" type="text" placeholder="Ürünün rafını giriniz" id="urunRaf"> -->
+
+    <div class="container row">
+
+        <div class="col-3 bg-lightgreen"  id="col-4-bg">
+            <div id="urunBilgisi" class=" mt-5 border-frame">
+                <h1 class="baslik-font txt-dark-green">Ürün Ekle</h1>
+                
+                <input class="b-r14 p-2 mb-1 f-18" type="text" placeholder="Ürün ismi" id="urunIsmi">
+                <input class="b-r14 p-2 mb-1 f-18" type="number" step="1" placeholder="Ürün stoğu" id="urunStok">
+                <input class="b-r14 p-2 mb-1 f-18" type="number" step="1" placeholder="Alış fiyatını giriniz" id="alisFiyat">
+                <input class="b-r14 p-2 mb-1 f-18" type="number" step="1" placeholder="Satış fiyatını giriniz" id="satisFiyat">
+                <select class="urunSelect p-3 f-16 b-r14" id="urunRaf" style="display: block;">
+                    <option disabled selected>Raf seçin</option>
+                    
+                </select>
+                <button class="mt-2 mb-1 f-18 btn btn-default-outline" id="ekleButon">Ürün Ekle</button>
+                <button class="mt-2 mb-1 f-18 ms-2 btn btn-default-outline" onclick="urunGoster()" id="siparisButon">Ürünleri Göster</button>
+            </div>
+            
+    
+            <div id="rafBilgisi" class=" mt-5 border-frame">
+                <h2 class="baslik-font txt-dark-green">Raf Ekle</h2>
+                
+                <input class="b-r14 p-2 mb-1 f-18" maxlength="1" type="text" placeholder="Raf ismi" id="rafIsmi">
+                <input class="b-r14 p-2 mb-1 f-18" type="number" step="1" placeholder="Raf max stoğu" id="rafMaxStok">
+                <button class="mt-2 mb-1 f-18 btn btn-default-outline"  id="rafEkle">Raf Ekle</button>
+                <button class="mt-2 mb-1 f-18 ms-2 btn btn-default-outline" onclick="rafGoster()">Rafları Göster</button>
+            </div>
+
+            <div id="urunAlis" class=" mt-5 border-frame">
+                <h2 class="baslik-font txt-dark-green">Ürün Al</h2>
+                
+                <!-- <input class="p-2 mb-1 f-18" type="text" placeholder="Ürün ismi" id="urunAlIsmi"> -->
+                <select id="urunAlSelect" class="b-r14 p-2 mb-1 f-18">
+                    <option disabled selected value="">Ürün Seçiniz</option>
+
+                </select>
+
+                <input class="b-r14 p-2 mb-1 f-18" type="number" step="1" placeholder="Ürün Adedi" id="urunAlisAdedi">
+                
+                <select class="urunSelect p-3 f-16 b-r14" id="" >
+                    <option disabled selected>Raf seçin</option>
+                    
+                </select>
+                
+                <button class="mt-2 mb-1 f-18 btn btn-default-outline" id="urunAl" >Ürün Al</button>
+                <button class="mt-2 mb-1 f-18 ms-2 btn btn-default-outline" onclick="AlinanUrunleriGoster()">Siparişleri Göster</button>
+            </div>
+
+            
+            <div class="border-frame mt-5" id="urunSatis">
+
+                <h2 class="baslik-font txt-dark-green">Satış</h2>
+                <button class=" mb-1 f-18 btn btn-default-outline" onclick="satisGoster()" id="satisButon">Ürün Satış</button>
+                
+
+
+            </div>
+
+            <br>
+            <br>
+
+            <div id="gel" class="h-200 w-200">
+              
+            </div>
+            
+        </div>
+
+
+
+        <div class="content col-9 me-5 " id="">
+            <div id="box">
+
+                <div id="urun-table-block" class="table-all">
+                    <table id="urun-table" class="table-hovered-green ">
+                        <thead>
+                            <tr>
+                                <th>Ürün İsmi</th>
+                                <th>Ürün Stok</th>
+                                <th>Ürün Alış Fiyatı</th>
+                                <th>Ürün Satış Fiyatı</th>
+                                <th>Ürün Rafı</th>
+        
+                            </tr>
+                        </thead>
+                       
+    
+                        <tbody id="urunler">
+    
+    
+                        </tbody>
+    
+                        
+                    </table>
+                    <br>
+
+                </div>
+
+
+
+               
+                <div class="mt-5" id="raf-block">
+
+                    
+
+
+                </div>
+
+                
+                
+                
+                <div id="urunAl-table-block" class="mt-2">
+                    
+                    
+
+                </div>
+
+                <br>
+
+                <div class="mt-3" id="satis-block">
+
+
+
+
+                </div>
+                
+               
+
+
+                
+
+            </div>
+
+        </div>
+
+
+        
+        
+        
+
+    </div>
+        
+
+
+    
+
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

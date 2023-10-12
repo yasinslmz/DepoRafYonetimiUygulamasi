@@ -1,0 +1,1 @@
+Depo raf yönetim sistemi için html css js ile bir web sayfası geliştirildi.
